@@ -14,8 +14,6 @@ function App() {
     <Router>
       <Nav />
       <div className='mainContent'>
-
-
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />

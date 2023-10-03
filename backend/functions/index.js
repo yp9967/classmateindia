@@ -1,11 +1,30 @@
+/**
+ * Import function triggers from their respective submodules:
+ *
+ * const {onCall} = require("firebase-functions/v2/https");
+ * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
+ *
+ * See a full list of supported triggers at https://firebase.google.com/docs/functions
+ */
+const {setGlobalOptions} = require("firebase-functions/v2");
+setGlobalOptions({maxInstances: 10});
+
+
+const {onRequest} = require("firebase-functions/v2/https");
+const logger = require("firebase-functions/logger");
+
+// Create and deploy your first functions
+// https://firebase.google.com/docs/functions/get-started
+
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-const PORT = process.env.PORT || 5000;
-app.use(express.json());
+// const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 app.use(cors());
+app.use(express.json());
 const mongoUrl = process.env.mongoUrl || "mongodb+srv://yp007:1234@cluster0.tqw9k1q.mongodb.net/?retryWrites=true&w=majority";
 mongoose
   .connect(mongoUrl, {
@@ -39,6 +58,13 @@ app.post("/register", async (req,res) => {
     }
 })
 
+
+
+app.get("/", (req,res) => {
+    // res.send("Hi");
+    res.status(200).send('OK');
+});
+
 app.get("/getAllUser", async (req,res) => {
   try {
     const allUser=await User.find({});
@@ -54,6 +80,8 @@ app.use(express.static(path.join(__dirname, "frontend", "build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 });
-app.listen(PORT, () => {
-    console.log("server started");
-  });
+// app.listen(() => {
+//     console.log("server started");
+//   });
+
+exports.app = onRequest(app);

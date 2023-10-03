@@ -4,7 +4,7 @@ function AdminPage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAllUser", {
+    fetch("https://us-central1-classmateindia-56f85.cloudfunctions.net/app/getAllUser", {
       method: "GET",
     })
       .then((res) => res.json())

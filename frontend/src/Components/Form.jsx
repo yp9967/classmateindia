@@ -13,13 +13,13 @@ class Form extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+const 
   handleSubmit(e) {
     e.preventDefault();
 
     const { name, email, phone, language, date, location } = this.state;
     console.log(name, phone, email, language, date, location);
-    fetch("http://localhost:5000/register", {
+    fetch("https://us-central1-classmateindia-56f85.cloudfunctions.net/app/register", {
       method:"POST",
       crossDomain:true,
       headers:{
