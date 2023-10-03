@@ -3,8 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-  
-  
 }
 
 .Navbar {
@@ -34,12 +32,14 @@
 .Navbar-btn {
   background-color: rgb(0, 129, 154);
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px;
+  width: auto;
+  margin: 25px;
+  font-size: 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
   @media (max-width: 650px) {
     padding: 8px 16px;
     font-size: 14px;
@@ -51,78 +51,87 @@
   }
 }
 .main-content {
-  margin-bottom: 100px; 
+  margin-bottom: 100px;
+ 
 }
-.admin-head{
+
+.admin-head {
   width: 80%;
   margin: 10px;
   display: flex;
   margin: auto;
   justify-content: space-between;
 }
-.admin-assign-btn{
-margin: 20px;
-padding: 10px 20px;
- background-color: rgb(0, 129, 154);;
+.admin-assign-btn {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: rgb(0, 129, 154);
 }
-.admin-title{
+.admin-title {
   margin: 20px 0px;
   text-align: center;
   font-size: 20px;
 }
-.admin-user-container{
+.admin-user-container {
   width: 80%;
-  
+
   margin: auto;
   justify-content: space-around;
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
-  
 }
-.admin-user-card{
+.admin-user-card {
   flex-basis: 22%;
   margin: 10px 0px;
   padding: 20px 0px;
   font-size: 13px;
   text-align: start;
   background: white;
-  display:flex ;
+  display: flex;
   cursor: pointer;
   flex-direction: column;
-box-shadow: 0px 0px 10px lightgrey;
-
+  box-shadow: 0px 0px 10px lightgrey;
 }
-.admin-user-card:hover{
+.admin-user-card:hover {
   background-color: #b7b5b5;
 }
-.admin-user-card span{
+.admin-user-card span {
   padding: 10px;
 }
 
-.Home{
-  display:flex ;
+.Home {
+  display: flex;
   align-items: center;
   flex-direction: column;
   min-height: 70vh;
   padding: 30px;
-  margin:20px;
+  margin: 20px;
 }
-.Home-cta{
- 
+.Home-cta {
+  justify-content: center;
   margin-bottom: 20px;
+  height: 30vh;
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.Home-button{
+.Home-button {
   background-color: rgb(0, 129, 154);
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 15px rgba(113, 182, 255, 0.6);
+  }
 }
 .login-body {
   min-height: 70vh;
+  overflow: hidden;
 }
 
 .login-container {
@@ -147,7 +156,6 @@ box-shadow: 0px 0px 10px lightgrey;
 .input-group {
   margin: 20px;
   text-align: left;
-  
 }
 
 .input-group label {
@@ -164,7 +172,7 @@ box-shadow: 0px 0px 10px lightgrey;
   font-size: 15px;
 }
 
-button {
+.login-btn {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -176,14 +184,9 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.login-btn:hover {
   background-color: #0056b3;
 }
-
-
-
-
-
 
 .body {
   min-height: 70vh;
@@ -254,7 +257,7 @@ form .fields .input-field {
     }
     width: calc(100% / 2 - 15px);
   }
-  @media (max-width: 570px) { 
+  @media (max-width: 570px) {
     .container form {
       overflow-y: scroll;
     }
@@ -263,7 +266,6 @@ form .fields .input-field {
     }
     width: 100%;
   }
-
 }
 .input-field label {
   font-size: 12px;
@@ -314,7 +316,6 @@ form .fields .input-field {
   list-style: none;
   padding: 0;
   margin: 0;
-  
 }
 
 .Footer-links .Footer-link {
@@ -327,7 +328,6 @@ form .fields .input-field {
     padding: 20px;
     justify-content: center;
   }
-
 }
 
 .Footer-copyright {
@@ -336,7 +336,6 @@ form .fields .input-field {
   font-size: 12px;
   line-height: 12px;
   margin-top: 10px;
-
 }
 
 .Footer-social {
@@ -352,20 +351,20 @@ form .fields .input-field {
   color: rgb(63, 64, 64);
 }
 
-@media only screen and (min-width: 200px) and (max-width: 650px){
-  .admin-user-container{
+@media only screen and (min-width: 200px) and (max-width: 650px) {
+  .admin-user-container {
     width: 100%;
     flex-direction: column;
   }
-  .admin-user-card{
+  .admin-user-card {
     margin: 10px;
   }
-  .admin-title{
+  .admin-title {
     font-size: 12px;
   }
-  .admin-assign-btn{
+  .admin-assign-btn {
     margin: 10px;
     padding: 12px 5px;
-     font-size: 10px;
-    }
+    font-size: 10px;
+  }
 }

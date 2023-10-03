@@ -1,47 +1,67 @@
 import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-class Form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      email: "",
-      phone: "",
-      language: "",
-      date: "",
-      location: ""
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-const 
-  handleSubmit(e) {
+function Form() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    language: "",
+    date: "",
+    location: "",
+  });
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { name, email, phone, language, date, location } = this.state;
-    console.log(name, phone, email, language, date, location);
-    fetch("https://us-central1-classmateindia-56f85.cloudfunctions.net/app/register", {
-      method:"POST",
-      crossDomain:true,
-      headers:{
-        "Content-Type":"application/json",
-        Accept:"application/json",
-        "Access-Control-Allow-Origin":"*",
-      },
-      body:JSON.stringify({
-        name,
-        phone,
-        email,
-        language,
-        date,
-        location
-      }),
-    }).then((res) => res.json())
-    .then((data) => {
-      console.log(data, "userRegistered");
-    });
-  }
+    // Destructure values from formData
+    const { name, email, phone, language, date, location } = formData;
 
-  render() {
+    // Display an alert message
+    alert("Successfully submitted your response");
+
+    // Redirect to the home page or any other desired route
+    navigate("/");
+
+    // Prepare data for the fetch request
+    const postData = {
+      name,
+      email,
+      phone,
+      language,
+      date,
+      location,
+    };
+
+    // Make a POST request to your API endpoint
+    fetch("https://us-central1-classmateindia-56f85.cloudfunctions.net/app/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify(postData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegistered");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
     
 
 
@@ -50,7 +70,7 @@ const
       <div className="body">
         <div className="container">
           <header>Registration htmlFor Volunteers</header>
-          <form onSubmit={this.handleSubmit} action="#">
+          <form onSubmit={handleSubmit} action="#">
             <div className="form first">
               <div className="details personal">
                 <span className="title">
@@ -65,7 +85,7 @@ const
                       name="fullName"
                       placeholder="Enter your name"
                       required
-                      onChange={(e) => this.setState({ name: e.target.value})}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="input-field">
@@ -75,7 +95,7 @@ const
                       name="contactNumber"
                       placeholder="+91"
                       required
-                      onChange={(e) => this.setState({ phone: e.target.value})}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="input-field">
@@ -85,7 +105,7 @@ const
                       placeholder="Enter your email-id"
                       required
                       name="email"
-                      onChange={(e) => this.setState({ email: e.target.value})}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="input-field">
@@ -94,7 +114,7 @@ const
                       className="select-field"
                       name="language"
                       required
-                      onChange={(e) => this.setState({ language: e.target.value})}
+                      onChange={handleChange}
                     >
                       <option value="">Select a language</option>
                       <option value="English">English</option>
@@ -108,7 +128,7 @@ const
                       placeholder=""
                       name="availability"
                       required
-                      onChange={(e) => this.setState({ date: e.target.value})}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className="input-field">
@@ -117,7 +137,7 @@ const
                       id="location"
                       name="location"
                       required
-                      onChange={(e) => this.setState({ location: e.target.value})}
+                      onChange={handleChange}
                     >
                       <option value="">Select a location</option>
                       <option value="Mumbai">Mumbai</option>
@@ -135,8 +155,8 @@ const
       </div>
     </>
   );
-}
-}
+
+  }
 
 
 export default Form;
