@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  
+  
+}
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  padding: 25px 10%;
+  height: 60px;
+  width: 100%;
+  z-index: 3;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px 0px;
+  border-bottom: 1px solid rgb(215, 215, 215);
+  background-color: rgb(255, 255, 255);
+}
+
+.Navbar-logo {
+  height: auto;
+  max-width: 100%;
+
+  @media (max-width: 650px) {
+    max-height: 22px;
+  }
+}
+
+.Navbar-btn {
+  background-color: rgb(0, 129, 154);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  @media (max-width: 650px) {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 15px rgba(113, 182, 255, 0.6);
+  }
+}
+.main-content {
+  margin-bottom: 100px; 
+}
+.admin-head{
+  width: 80%;
+  margin: 10px;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+.admin-assign-btn{
+margin: 20px;
+padding: 10px 20px;
+ background-color: rgb(0, 129, 154);;
+}
+.admin-title{
+  margin: 20px 0px;
+  text-align: center;
+  font-size: 20px;
+}
+.admin-user-container{
+  width: 80%;
+  
+  margin: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  
+}
+.admin-user-card{
+  flex-basis: 22%;
+  margin: 10px 0px;
+  padding: 20px 0px;
+  font-size: 13px;
+  text-align: start;
+  background: white;
+  display:flex ;
+  cursor: pointer;
+  flex-direction: column;
+box-shadow: 0px 0px 10px lightgrey;
+
+}
+.admin-user-card:hover{
+  background-color: #b7b5b5;
+}
+.admin-user-card span{
+  padding: 10px;
+}
+
+.Home{
+  display:flex ;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh;
+  padding: 30px;
+  margin:20px;
+}
+.Home-cta{
+ 
+  margin-bottom: 20px;
+}
+.Home-button{
+  background-color: rgb(0, 129, 154);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.login-body {
+  min-height: 70vh;
+}
+
+.login-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container h1 {
+  color: #333;
+  font-size: 22px;
+}
+
+.input-group {
+  margin: 20px;
+  text-align: left;
+  
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.input-group input {
+  width: 25vw;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 20px;
+  width: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+.body {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: absolute;
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  margin: 0 15px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  justify-content: center;
+}
+.container header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 57px;
+  border-radius: 8px;
+  background-color: rgb(0, 129, 154);
+}
+.container form {
+  position: relative;
+  margin-top: 16px;
+  min-height: 290px;
+  background-color: #fff;
+}
+.container form .details {
+  margin-top: 30px;
+}
+.container form .title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: #333;
+}
+.container form .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .fields .input-field {
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+  @media (max-width: 768px) {
+    .container form {
+      overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar {
+      display: none;
+    }
+    width: calc(100% / 2 - 15px);
+  }
+  @media (max-width: 570px) { 
+    .container form {
+      overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar {
+      display: none;
+    }
+    width: 100%;
+  }
+
+}
+.input-field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.input-field input {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+.input-field input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+.input-field input[type="date"] {
+  color: #707070;
+}
+.input-field input[type="date"]:valid {
+  color: #333;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 30px 200px;
+  border-top: 2px solid rgb(238, 238, 238);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+  }
+}
+
+.Footer-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.Footer-links .Footer-link {
+  margin-right: 20px;
+  text-decoration: none;
+  color: rgb(0, 129, 154);
+  font-size: 13px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+  }
+
+}
+
+.Footer-copyright {
+  text-align: center;
+  color: rgb(100, 102, 102);
+  font-size: 12px;
+  line-height: 12px;
+  margin-top: 10px;
+
+}
+
+.Footer-social {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.Footer-social .Footer-social-icon {
+  margin-left: 20px;
+  text-decoration: none;
+  color: rgb(63, 64, 64);
+}
+
+@media only screen and (min-width: 200px) and (max-width: 650px){
+  .admin-user-container{
+    width: 100%;
+    flex-direction: column;
+  }
+  .admin-user-card{
+    margin: 10px;
+  }
+  .admin-title{
+    font-size: 12px;
+  }
+  .admin-assign-btn{
+    margin: 10px;
+    padding: 12px 5px;
+     font-size: 10px;
+    }
+}
