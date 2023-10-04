@@ -7,7 +7,8 @@ const UserDetailsSchema = new mongoose.Schema(
         email: String,
         language: [String],
         date: [String],
-        location: String
+        location: String,
+        classroomId: String
     },
     {
         collection: "UserInfo",

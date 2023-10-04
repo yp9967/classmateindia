@@ -77,6 +77,36 @@ app.get("/getAllUser", async (req,res) => {
   }
 });
 
+const classrooms = require("./classrooms.json");
+
+app.post("/allocateClassrooms", async (req, res) => {
+  try {
+      // Fetch all users
+      const users = await User.find({}); // Optionally, filter out users that are already allocated
+
+      users.forEach(async (user) => {
+          for (let classroom of classrooms) {
+              if (classroom.location === user.location &&
+                  (!classroom.languageRequirement.length || classroom.languageRequirement.includes(user.language)) &&
+                  classroom.requirement > 0
+              ) {
+                  classroom.requirement -= 1; // Reduce the requirement of the classroom by 1
+                  console.log({_id: user._id.toHexString()}, {$set: {classroomId: classroom.classroomID}});
+                  const result = await User.updateOne({_id: user._id}, {$set: {classroomId: classroom.classroomID}}, { w: 1 });
+                  console.log(result);
+                  break; // Break after assigning a classroom to the user
+              }
+          }
+      });
+
+      res.send({ status: "Ok" });
+
+  } catch (error) {
+      console.log(error);
+      res.send({ status: "error" });
+  }
+});
+
 app.use(express.static(path.join(__dirname, "frontend", "build")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
