@@ -28,16 +28,16 @@ function AdminPage() {
             <div className="admin-user-card">
               <span className="admin-user-name"><b>Classroom: </b> {i.class}</span>
               <span className="admin-user-name"><b>Name: </b> {i.name}</span>
-              <span className="admin-user-phone">Phone: {i.phone}</span>
-              <span className="admin-user-email">Email: {i.email}</span>
+              <span className="admin-user-phone"><b>Phone:</b> {i.phone}</span>
+              <span className="admin-user-email"><b>Email:</b> {i.email}</span>
               <span className="admin-user-language">
-                Languages: {i.language.join(', ')}
+                <b>Languages: </b>{i.language.join(', ')}
               </span>
               <span className="admin-user-availability">
-                Availability: {i.date.join(', ')}
+                <b>Availability: </b>{i.date.join(', ')}
               </span>
               <span className="admin-user-location">
-                Location: {i.location}
+                <b>Location: </b>{i.location}
               </span>
             </div>
           );

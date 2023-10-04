@@ -1,11 +1,6 @@
 import React from "react";
 import Select from "react-select";
-// import { useNavigate } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
 
-// const history = useHistory();
-
-// const navigate = useNavigate();
 
 class Form extends React.Component {
   constructor(props) {
