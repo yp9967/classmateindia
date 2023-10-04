@@ -9,8 +9,8 @@
   - [Usage](#usage)
 - [Application Flow](#application-flow)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+
+
 
 ## Introduction
 
@@ -32,13 +32,49 @@ Provide detailed installation instructions, including prerequisites and steps to
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/yp9967/classmateindia.git
 
 # Install dependencies
 npm install
 
-# Configure environment variables
-Create a .env file and set up necessary environment variables.
-
 # Start the application
 npm start
+```
+## Usage
+
+### Volunteer Registration
+
+1. Access the registration page.
+2. Fill in your personal details, including name, contact information, and email.
+3. Select the languages you can speak.
+4. Specify your availability on different days of the week.
+5. Choose your preferred location.
+6. Click the "Submit" button to complete your registration.
+
+### Classroom Allocation
+
+1. Once registered, our system will automatically match you with suitable classrooms based on your language skills, availability, and location.
+2. You will receive an email notification with the details of your classroom assignment.
+
+### Admin Dashboard
+
+1. Staff members can log in to the staff dashboard.
+2. They can view a list of registered volunteers and their classroom allocations.
+3. Staff can filter and search for volunteers by various criteria.
+4. The dashboard provides insights into the allocation process and volunteer management.
+
+## Application Flow
+
+1. Volunteers register on the platform, providing their details.
+2. The system matches volunteers with classrooms based on language skills, availability, and location.
+3. Volunteers receive email notifications with classroom assignments.
+4. Teach For India staff members access the dashboard to oversee volunteer registrations and allocations.
+5. Staff can generate reports and track volunteer assignments for effective management.
+
+## Technologies Used
+
+- **Frontend:** React.js, HTML, CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Deployment:** Firebase
+
