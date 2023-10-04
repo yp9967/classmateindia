@@ -5,7 +5,11 @@ function Nav() {
     <>
       <div className="Navbar">
         <NavLink to="/">
-        <img src="https://apply.teachforindia.org/teachforindia_logo.svg" alt="logo" className="Navbar-logo"/>
+          <img
+            src="https://apply.teachforindia.org/teachforindia_logo.svg"
+            alt="logo"
+            className="Navbar-logo"
+          />
         </NavLink>
         <NavLink to="/login">
           <button className="Navbar-btn">Admin</button>
