@@ -35,7 +35,7 @@ function Login() {
               <input
                 type="text"
                 name="email"
-                placeholder="Enter id here"
+                placeholder="id-1234"
                 onChange={(e) => setEnteredUsername(e.target.value)}
               />
             </div>
@@ -44,7 +44,7 @@ function Login() {
               <input
                 type="password"
                 name="password"
-                placeholder="Enter password here"
+                placeholder="pass-1234"
                 onChange={(e) => setEnteredPassword(e.target.value)}
               />
             </div>

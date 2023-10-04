@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Frontend Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend documentation for CLASSMATEINDIA. It provides information on setting up, running, and using the frontend application.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Usage](#usage)
+- [Application Flow](#application-flow)
+- [Technologies Used](#technologies-used)
+- [Running the Frontend](#running-the-frontend)
+- [Development](#development)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The frontend of this application allows volunteers to register by providing their details, including name, contact number, email, spoken languages, availability, and location. Volunteers can submit their information using the registration form.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Application Flow
 
-### `npm run build`
+The application flow involves the following steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Landing Page (Home Page):** The landing page is the home page of the application. It provides an option to "Get Started Today."
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Registration Form:** Clicking on "Get Started Today" redirects users to the registration form page.
 
-### `npm run eject`
+3. **Volunteer Registration:** Volunteers fill out a registration form with their details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Data Submission:** After submitting the registration form, the data is sent to the backend server for processing and matching with suitable classrooms.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. **Successful Registration Alert:** Upon successful registration, users receive an alert message confirming their registration.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6. **Allocation Presentation:** The registered volunteers are then presented to the Admin overseeing the volunteer program.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+7. **Admin Page:** An admin page is available to staff members. The "Assign" button is displayed on the admin page after 20 successful volunteer registrations.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+List the technologies, frameworks, libraries, and tools used in your frontend application.
 
-### Code Splitting
+- [React](https://reactjs.org/)
+- [React Router Dom](https://reactrouter.com/)
+- [React Select](https://reactselect.com/)
+- [Styled-components](https://styled-components.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
