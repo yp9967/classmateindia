@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+  
 }
 
 .Navbar {
@@ -40,9 +41,13 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  &:active {
+    transform: scale(0.95); 
+  }
   @media (max-width: 650px) {
     padding: 8px 16px;
     font-size: 14px;
+    
   }
 
   &:hover {
@@ -107,14 +112,56 @@
   min-height: 70vh;
   padding: 30px;
   margin: 20px;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
 .Home-cta {
   justify-content: center;
   margin-bottom: 20px;
-  height: 30vh;
+  height: 27vh;
   
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.home-para p{
+  margin: 20px;
+  display: flex;
+  
+  justify-content: center;
+}
+.para-1{
+font-size: 20px;
+font-family: 'Pacifico', cursive;
+animation: drop-in 1s ease 200ms backwards;
+}
+.para-2{
+  font-size: 15px;
+  font-family: 'ADLaM Display', cursive;
+  animation: drop-in 1200ms ease 500ms backwards;
+}
+@keyframes drop-in {
+  from {
+   opacity: 0;
+   transform: translateY(-100px);
+  }
+  to {
+   opacity: 1;
+   transform: translate(0px);
+  }
+ }
+  .para-3{
+    font-size: 20px;
+    font-family: 'Mooli', sans-serif;
+    font-weight: 700;
+    }
 .Home-button {
   background-color: rgb(0, 129, 154);
   color: #fff;
@@ -128,10 +175,43 @@
     background-color: #0056b3;
     box-shadow: 0 0 15px rgba(113, 182, 255, 0.6);
   }
+  &:active {
+    transform: scale(0.97); 
+  }
+  animation: 10s anim-lineUp ease-out infinite;
 }
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .login-body {
   min-height: 70vh;
   overflow: hidden;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
 
 .login-container {
@@ -182,6 +262,9 @@
   width: 50%;
   font-size: 16px;
   cursor: pointer;
+  &:active {
+    transform: scale(0.97); /* Slightly scale down when clicked */
+  }
 }
 
 .login-btn:hover {
@@ -236,6 +319,11 @@
   font-weight: 500;
   margin: 6px 0;
   color: #333;
+  
+}
+.container form .title-span{
+  font-size: small;
+  color: #aaa;
 }
 .container form .fields {
   display: flex;
@@ -268,7 +356,7 @@ form .fields .input-field {
   }
 }
 .input-field label {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
   color: #2e2e2e;
 }
@@ -292,7 +380,12 @@ form .fields .input-field {
 .input-field input[type="date"]:valid {
   color: #333;
 }
-
+.input-field-select{
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 42px;
+}
 .Footer {
   display: flex;
   justify-content: space-between;

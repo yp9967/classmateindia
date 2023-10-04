@@ -60,6 +60,7 @@ app.post("/register", async (req,res) => {
 
 
 
+
 app.get("/", (req,res) => {
     // res.send("Hi");
     res.status(200).send('OK');
