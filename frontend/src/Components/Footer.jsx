@@ -10,54 +10,54 @@ function Footer() {
     <div className="Footer">
       <ul className="Footer-links">
         <li>
-        <a
-          className="Footer-link"
-          href="https://teachforindia.org/about-us"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Our Story
-        </a>
+          <a
+            className="Footer-link"
+            href="https://teachforindia.org/about-us"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Our Story
+          </a>
         </li>
         <li>
-        <a
-          className="Footer-link"
-          href="https://teachforindia.org/education-crisis"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          The Ed Crisis
-        </a>
+          <a
+            className="Footer-link"
+            href="https://teachforindia.org/education-crisis"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Ed Crisis
+          </a>
         </li>
         <li>
-        <a
-          className="Footer-link"
-          href="https://teachforindia.org/fellowship"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Our Model
-        </a>
+          <a
+            className="Footer-link"
+            href="https://teachforindia.org/fellowship"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Our Model
+          </a>
         </li>
         <li>
-        <a
-          className="Footer-link"
-          href="https://teachforindia.org/our-impact"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Our Impact
-        </a>
+          <a
+            className="Footer-link"
+            href="https://teachforindia.org/our-impact"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Our Impact
+          </a>
         </li>
         <li>
-        <a
-          className="Footer-link"
-          href="https://teachforindia.org/faqs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          FAQs
-        </a>
+          <a
+            className="Footer-link"
+            href="https://teachforindia.org/faqs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FAQs
+          </a>
         </li>
       </ul>
       <span className="Footer-copyright">
@@ -74,41 +74,45 @@ function Footer() {
             <BiLogoFacebook />
           </a>
         </li>
-        <li >
+        <li>
           <a
-          className="Footer-social-icon"
+            className="Footer-social-icon"
             href="https://www.instagram.com/teachforindia/"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <BiLogoInstagram /></a>
+            <BiLogoInstagram />
+          </a>
         </li>
         <li>
           <a
-          className="Footer-social-icon"
+            className="Footer-social-icon"
             href="https://www.twitter.com/TeachForIndia"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <BiLogoTwitter /></a>
+            <BiLogoTwitter />
+          </a>
         </li>
         <li>
           <a
-          className="Footer-social-icon"
+            className="Footer-social-icon"
             href="https://www.linkedin.com/company/teach-for-india"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <BiLogoLinkedinSquare /></a>
+            <BiLogoLinkedinSquare />
+          </a>
         </li>
         <li>
           <a
-          className="Footer-social-icon"
+            className="Footer-social-icon"
             href="https://www.youtube.com/user/TeachForIndia"
             target="_blank"
             rel="noopener noreferrer"
           >
-          <BiLogoYoutube /></a>
+            <BiLogoYoutube />
+          </a>
         </li>
       </ul>
     </div>
