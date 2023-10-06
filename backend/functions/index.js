@@ -1,3 +1,4 @@
+const cors = require("cors");
 const { setGlobalOptions } = require("firebase-functions/v2");
 setGlobalOptions({ maxInstances: 10 });
 
@@ -9,7 +10,6 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 
-const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 const mongoUrl =
@@ -47,7 +47,6 @@ app.post("/register", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  // res.send("Hi");
   res.status(200).send("OK");
 });
 
@@ -60,28 +59,39 @@ app.get("/getAllUser", async (req, res) => {
   }
 });
 
-const classrooms = require("./classrooms.json");
+require("./classroomInfo");
+const classrooms = mongoose.model("classroom");
 
 app.post("/allocateClassrooms", async (req, res) => {
   try {
-    const users = await User.find({});
+    const users = await User.find({ classroomId: { $exists: false } });
+    const classroom = await classrooms.find({});
+
+    console.log(users.length);
 
     users.forEach(async (user) => {
-      for (let classroom of classrooms) {
+      for (let cls of classroom) {
         if (
-          classroom.location === user.location &&
-          (!classroom.languageRequirement.length ||
-            classroom.languageRequirement.includes(user.language)) &&
-          classroom.requirement > 0
+          cls.location === user.location &&
+          (!cls.languageRequirement.length ||
+            user.language.some((lang) =>
+              cls.languageRequirement.includes(lang)
+            )) &&
+          cls.remainingreq > 0
         ) {
-          classroom.requirement -= 1;
+          cls.remainingreq -= 1;
           console.log(
             { _id: user._id.toHexString() },
-            { $set: { classroomId: classroom.classroomID } }
+            { $set: { classroomId: cls.classroomID } }
           );
           const result = await User.updateOne(
             { _id: user._id },
-            { $set: { classroomId: classroom.classroomID } },
+            { $set: { classroomId: cls.classroomID } },
+            { w: 1 }
+          );
+          await classrooms.updateOne(
+            { _id: cls._id },
+            { $set: { remainingreq: cls.remainingreq } },
             { w: 1 }
           );
           console.log(result);
@@ -89,8 +99,9 @@ app.post("/allocateClassrooms", async (req, res) => {
         }
       }
     });
-
-    res.send({ status: "Ok" });
+    {
+      res.send({ status: "Ok" });
+    }
   } catch (error) {
     console.log(error);
     res.send({ status: "error" });
