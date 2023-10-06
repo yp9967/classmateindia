@@ -11,9 +11,15 @@ function Nav() {
             className="Navbar-logo"
           />
         </NavLink>
-        <NavLink to="/login">
-          <button className="Navbar-btn">Admin</button>
-        </NavLink>
+        <div>
+          <NavLink to="/form">
+            <button className="Navbar-btn">Register</button>
+          </NavLink>
+          <NavLink to="/login">
+            
+            <button className="Navbar-btn">Admin</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

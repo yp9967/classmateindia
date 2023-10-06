@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 
-function AdminPage() {
+function Admin() {
   const [data, setData] = useState([]);
+
   function allocate() {
     fetch(
       "https://us-central1-classmateindia-56f85.cloudfunctions.net/app/allocateClassrooms",
       {
         method: "POST",
       }
-    ).then((res) => res.json());
+    )
+      .then((res) => res.json())
+      .then(() => {
+        alert("Classrooms are successfully assigned.");
+        window.location.reload();
+      });
   }
 
   useEffect(() => {
@@ -29,18 +35,18 @@ function AdminPage() {
     <div className="admin-container">
       <div className="admin-head">
         <h1 className="admin-title">
-          Details of Registered Voulenters ({data.length})
+          Details of Registered Volunteers ({data.length})
         </h1>
-        {data.length >= 20 && (
-          <button className="admin-assign-btn" onClick={allocate()}>
+        {data.length >= 10 && (
+          <button className="admin-assign-btn" onClick={allocate}>
             Assign Classroom
           </button>
         )}
       </div>
       <div className="admin-user-container">
-        {data.map((i) => {
-          return (
-            <div className="admin-user-card">
+        {data.length > 0 ? (
+          data.map((i) => (
+            <div className="admin-user-card" key={i.id}>
               <span className="admin-user-name">
                 <b>
                   Classroom:{" "}
@@ -69,11 +75,13 @@ function AdminPage() {
                 {i.location}
               </span>
             </div>
-          );
-        })}
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </div>
   );
 }
 
-export default AdminPage;
+export default Admin;

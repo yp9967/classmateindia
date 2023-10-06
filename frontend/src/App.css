@@ -19,6 +19,17 @@
   box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px 0px;
   border-bottom: 1px solid rgb(215, 215, 215);
   background-color: rgb(255, 255, 255);
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
 
 .Navbar-logo {
@@ -97,7 +108,19 @@
   cursor: pointer;
   flex-direction: column;
   box-shadow: 0px 0px 10px lightgrey;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
 .admin-user-card:hover {
   background-color: #b7b5b5;
 }
@@ -161,6 +184,7 @@ animation: drop-in 1s ease 200ms backwards;
     font-size: 20px;
     font-family: 'Mooli', sans-serif;
     font-weight: 700;
+    animation: drop-in 1200ms ease 500ms backwards;
     }
 .Home-button {
   background-color: rgb(0, 129, 154);
@@ -178,7 +202,7 @@ animation: drop-in 1s ease 200ms backwards;
   &:active {
     transform: scale(0.97); 
   }
-  animation: 10s anim-lineUp ease-out infinite;
+  animation: 6s anim-lineUp ease-out infinite;
 }
 @keyframes anim-lineUp {
   0% {
@@ -276,6 +300,17 @@ animation: drop-in 1s ease 200ms backwards;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
 .container {
   position: absolute;
@@ -448,16 +483,42 @@ form .fields .input-field {
   .admin-user-container {
     width: 100%;
     flex-direction: column;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+}
   .admin-user-card {
     margin: 10px;
   }
   .admin-title {
-    font-size: 12px;
+    font-size: 20px;
   }
   .admin-assign-btn {
-    margin: 10px;
-    padding: 12px 5px;
-    font-size: 10px;
+    background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 20px;
+  width: 20%;
+  font-size: 16px;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.97); /* Slightly scale down when clicked */
   }
 }
+
+.admin-assign-btn:hover {
+  background-color: #0056b3;
+}
+  
+

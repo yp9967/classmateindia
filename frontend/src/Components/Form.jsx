@@ -1,7 +1,6 @@
 import React from "react";
 import Select from "react-select";
 
-
 class Form extends React.Component {
   constructor(props) {
     super(props);
@@ -25,15 +24,14 @@ class Form extends React.Component {
     const re = /^\+91[0-9]{10}$/;
     return re.test(phone);
   }
- 
+
   const;
-  
+
   handleSubmit(e) {
     e.preventDefault();
 
     const { name, email, phone, language, date, location } = this.state;
-    
-    // Email validation
+
     const isEmailValid = this.validateEmail(email);
 
     if (!isEmailValid) {
@@ -41,7 +39,6 @@ class Form extends React.Component {
       return;
     }
 
-    // If email is valid, continue with form submission
     this.setState({ emailError: "" });
     const isPhoneValid = this.validatePhone(phone);
 
@@ -49,40 +46,38 @@ class Form extends React.Component {
       this.setState({ phoneError: "Invalid phone number" });
       return;
     } else {
-      this.setState({ phoneError: "" }); // Clear the phone error when phone number is valid
+      this.setState({ phoneError: "" });
     }
     console.log(name, phone, email, language, date, location);
     alert("Successfully submitted your response");
-    window.location.href ="/"
-   
+    window.location.href = "/";
+    const requestBody = JSON.stringify({
+      name,
+      phone,
+      email,
+      language,
+      date,
+      location,
+    });
+
     fetch(
       "https://us-central1-classmateindia-56f85.cloudfunctions.net/app/register",
       {
         method: "POST",
-        crossDomain: true,
+
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify({
-          name,
-          phone,
-          email,
-          language,
-          date,
-          location,
-        }),
+        body: requestBody,
       }
     )
-      .then((res) => res.json())
+      .then((res) => res.text())
       .then((data) => {
         console.log(data, "userRegistered");
       });
   }
 
   render() {
-    // const navigate = useNavigate();
     const langoptions = [
       { value: "English", label: "English" },
       { value: "Hindi", label: "Hindi" },
@@ -115,8 +110,11 @@ class Form extends React.Component {
               <div className="form first">
                 <div className="details personal">
                   <span className="title">
-                    You can enter your details here ...<br/>
-                    <span className="title-span">(All fields are compulsory)</span>
+                    You can enter your details here ...
+                    <br />
+                    <span className="title-span">
+                      (All fields are compulsory)
+                    </span>
                   </span>
 
                   <div className="fields">
@@ -124,7 +122,7 @@ class Form extends React.Component {
                       <label htmlFor="name">Full Name</label>
                       <input
                         type="text"
-                        name="fullName"
+                        id="name"
                         placeholder="Enter your name"
                         required
                         onChange={(e) =>
@@ -136,7 +134,7 @@ class Form extends React.Component {
                       <label htmlFor="phone">Contact Number</label>
                       <input
                         type="text"
-                        name="contactNumber"
+                        id="phone"
                         placeholder="(eg. +918292324252)"
                         required
                         onChange={(e) =>
@@ -151,22 +149,25 @@ class Form extends React.Component {
                       <label htmlFor="email">email-id</label>
                       <input
                         type="text"
+                        id="email"
                         placeholder="(eg. ram@yahoo.com)"
                         required
-                        name="email"
                         onChange={(e) =>
                           this.setState({ email: e.target.value })
                         }
                       />
-                       <span style={{ color: "red" }}>
+                      <span style={{ color: "red" }}>
                         {this.state.emailError}
                       </span>
                     </div>
                     <div className="input-field">
-                      <label htmlFor="language" className="input-field-label">Spoken Languages</label>
+                      <label htmlFor="language" className="input-field-label">
+                        Spoken Languages
+                      </label>
 
                       <Select
                         options={langoptions}
+                        id="language"
                         className="input-field-select"
                         isMulti
                         onChange={(e) =>
@@ -180,7 +181,8 @@ class Form extends React.Component {
                     <div className="input-field">
                       <label htmlFor="date">Availability</label>
                       <Select
-                      className="input-field-select"
+                        className="input-field-select"
+                        id="date"
                         options={daysoptions}
                         isMulti
                         onChange={(e) =>
@@ -195,7 +197,8 @@ class Form extends React.Component {
                       <label htmlFor="location">Location</label>
 
                       <Select
-                      className="input-field-select"
+                        className="input-field-select"
+                        id="location"
                         options={locoptions}
                         onChange={(e) => this.setState({ location: e.value })}
                         required
